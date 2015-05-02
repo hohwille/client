@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+body {
+  font-size: 16pt;
+}
+output { 
+}
+.VerticalPanel > * {
+  display: block;
+}
+.HorizontalPanel {
+  overflow: hidden;
+  /*overflow-x: auto;*/
+  white-space: nowrap;
+  display: flex;
+}
+.HorizontalPanel > * {
+  /*display: inline-block;*/
+}
+
+.Window {
+  background: white;
+  box-shadow: 4px 4px 5px 0px black;
+  border-radius: 0.5em;
+}
+.WindowContent {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.Window .WindowTitleBar {
+  border-top-color: #e6e6e6;
+  border-left-color: #cdcdcd;
+  border-right-color: #808080;
+  border-bottom-color: #676767;
+  border-width: 1px;
+  cursor: move;
+  background-image: linear-gradient(to bottom, #ffffff, #e0e0e0);
+  border-style: solid;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+.Window .WindowTitleBar:hover {
+  background-image: linear-gradient(to bottom, #ffffff, #b6cff3);
+}
+.Window .WindowTitleBar:focus,
+.Window .WindowTitleBar:active {
+  background-image: linear-gradient(to bottom, #ffffff, #74a3e9);
+}
+.Window .WindowTitleBar .WindowTitle {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 0.2em;
+  -moz-user-select: none;
+  user-select: none;
+}
+  </style>
+</head>
+<body>
+  <div style="left: 325px; top: 14px; position: absolute; overflow: visible;" class="Window Popup" id="mmm70">
+    <div class="popupContent">
+      <div class="VerticalPanel" style="width: 110px; height: 90px;">
+        <div class="HorizontalPanel WindowTitleBar">
+          <span class="WindowTitle">Popup Test</span>
+        </div>
+        <div class="VerticalPanel WindowContent">
+          <div class="VerticalPanel" aria-hidden="false" id="mmm71">
+            <div class="Label" aria-hidden="false" id="mmm72">Hello World!</div>
+            <div class="HorizontalPanel">
+              <span>Span Text1 </span>
+              <div>Div Text1 </div>
+              <div>Text </div>
+              <span>and words</span>
+            </div>
+            <button type="button" class="Button" id="mmm73">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="VerticalPanel">
+      <button>Click me1</button>
+      <span>Span Text</span>
+      <div>Div Text</div>
+      <button>Click me2</button>
+      <button>Click me3</button>
+      <button>Click me4</button>
+  </div>
+  <div class="VerticalPanel">
+    <div class="HorizontalPanel">
+      <button>Click me1</button>
+      <span>Span Text1 </span>
+      <div>Div Text1 </div>
+      <button>Click me2</button>
+      <span>Span Text2 </span>
+      <div>Div Text2 </div>
+      <button>Click me3</button>
+      <span>Span Text3 </span>
+      <div>Div Text3 </div>
+      <button>Click me4</button>
+      <span>Span Text4 </span>
+      <div>Div Text4 </div>
+      <button>Click me5</button>
+      <span>Span Text5 </span>
+      <div>Div Text5 </div>
+      <button>Click me6</button>
+      <span>Span Text6 </span>
+      <div>Div Text6 </div>
+      <button>Click me7</button>
+      <span>Span Text7 </span>
+      <div>Div Text7 </div>
+      <button>Click me8</button>
+    </div>
+    <div class="HorizontalPanel">
+      <button>Click me1</button>
+      <button>Click me2</button>
+      <button>Click me3</button>
+      <button>Click me4</button>
+      <button>Click me5</button>
+      <button>Click me6</button>
+      <button>Click me7</button>
+      <button>Click me8</button>
+    </div>
+  </div>  
+
+  <div class="HorizontalPanel">
+  <input id="mmm1" type="range" min="0" max="100" value="0" onchange="mmm2.value = this.valueAsNumber" list="mmm1list"/>
+  <datalist id="mmm1list">
+    <option>0</option>
+    <option>50</option>
+    <option>100</option>
+  </datalist>
+  <output id="mmm2" for="mm1">0</output>
+  <input id="mmm3" type="number" min="0" max="100" value="0"/>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.sf.m-m-m</groupId>
+    <artifactId>mmm-client</artifactId>
+    <version>dev</version>
+  </parent>
+  <artifactId>mmm-client-modules</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}</name>
+  <description>The actual modules of mmm-client.</description>
+
+  <modules>
+    <module>../mmm-client-api</module>
+    <module>../mmm-client-impl-gwt</module>
+    <module>../mmm-client-ui</module>
+  </modules>
+  
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mmm-util-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- BOM of mmm-util -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mmm-client-bom</artifactId>
+        <version>${net.sf.mmm.client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+</project>

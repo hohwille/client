@@ -9,7 +9,7 @@
     <relativePath>../mmm-parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-client</artifactId>
-  <version>dev</version>
+  <version>dev-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
   <description>Support for clients.</description>  

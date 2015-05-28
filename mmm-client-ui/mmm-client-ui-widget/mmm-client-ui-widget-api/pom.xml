@@ -5,7 +5,7 @@
   <parent>
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm-client-ui-widget</artifactId>
-    <version>dev</version>
+    <version>dev-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>mmm-client-ui-widget-api</artifactId>

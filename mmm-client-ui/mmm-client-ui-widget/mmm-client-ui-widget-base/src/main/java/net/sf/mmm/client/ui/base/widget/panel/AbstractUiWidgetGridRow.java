@@ -15,21 +15,21 @@ import net.sf.mmm.util.value.api.ValueOutOfRangeException;
 
 /**
  * This is the abstract base implementation of {@link UiWidgetGridCell}.
- * 
+ *
  * @param <ADAPTER> is the generic type of {@link #getWidgetAdapter()}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract class AbstractUiWidgetGridRow<ADAPTER extends UiWidgetAdapterGridRow> extends
-    AbstractUiWidgetDynamicPanel<ADAPTER, UiWidgetGridCell> implements UiWidgetGridRow {
+public abstract class AbstractUiWidgetGridRow<ADAPTER extends UiWidgetAdapterGridRow>
+    extends AbstractUiWidgetDynamicPanel<ADAPTER, UiWidgetGridCell> implements UiWidgetGridRow {
 
   /**
    * The constructor.
-   * 
+   *
    * @param context is the {@link #getContext() context}.
-   * @param widgetAdapter is the {@link #getWidgetAdapter() widget adapter}. Typically <code>null</code> for
-   *        lazy initialization.
+   * @param widgetAdapter is the {@link #getWidgetAdapter() widget adapter}. Typically <code>null</code> for lazy
+   *        initialization.
    */
   public AbstractUiWidgetGridRow(UiContext context, ADAPTER widgetAdapter) {
 
@@ -51,7 +51,7 @@ public abstract class AbstractUiWidgetGridRow<ADAPTER extends UiWidgetAdapterGri
 
   /**
    * @see #addChild(UiWidgetRegular)
-   * 
+   *
    * @param child is the child widget to add.
    * @return the {@link UiWidgetGridCell}.
    */
@@ -97,7 +97,7 @@ public abstract class AbstractUiWidgetGridRow<ADAPTER extends UiWidgetAdapterGri
 
   /**
    * Verifies that the column count is not exceeded after addChild operation.
-   * 
+   *
    * @param child is the child to add.
    * @param index is the insert position or <code>-1</code> for add at end.
    * @return <code>true</code> if valid, <code>false</code> (or Exception) otherwise.
@@ -122,8 +122,9 @@ public abstract class AbstractUiWidgetGridRow<ADAPTER extends UiWidgetAdapterGri
           newColumnCount = child.getColumnSpan();
         }
         if (newColumnCount > columnCount.intValue()) {
-          throw new ValueOutOfRangeException(Integer.valueOf(newColumnCount), Integer.valueOf(0), columnCount,
-              "columnCount of " + this);
+          Number value = Integer.valueOf(newColumnCount);
+          Number min = Integer.valueOf(0);
+          throw new ValueOutOfRangeException(value, min, columnCount, "columnCount of " + this);
         }
         return (newColumnCount <= columnCount.intValue());
       }

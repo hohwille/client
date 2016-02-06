@@ -8,22 +8,21 @@ import net.sf.mmm.util.component.base.AbstractLoggableComponent;
 
 /**
  * This is the abstract base class for the controller of a {@link net.sf.mmm.client.ui.api.dialog.Dialog} or
- * {@link net.sf.mmm.client.ui.api.dialog.PopupDialog}. It implements {@link AbstractDialog} as it represents
- * the actual {@link net.sf.mmm.client.ui.api.dialog.Dialog} or
- * {@link net.sf.mmm.client.ui.api.dialog.PopupDialog} and is its main entry point. A
- * {@link AbstractDialogController} is supposed to be a lightweight component and
- * {@link #AbstractDialogController() construction} shall be cheap and fast. It contains a {@link #getView()
- * view} that is lazily created for performance reasons. The {@link #getView() view} can also be
- * {@link #reset() reseted} to free resources or for testing hot-code changes during development. Therefore
- * implementations have to properly reset their state in {@link #onReset()}.
- * 
+ * {@link net.sf.mmm.client.ui.api.dialog.PopupDialog}. It implements {@link AbstractDialog} as it represents the actual
+ * {@link net.sf.mmm.client.ui.api.dialog.Dialog} or {@link net.sf.mmm.client.ui.api.dialog.PopupDialog} and is its main
+ * entry point. A {@link AbstractDialogController} is supposed to be a lightweight component and
+ * {@link #AbstractDialogController() construction} shall be cheap and fast. It contains a {@link #getView() view} that
+ * is lazily created for performance reasons. The {@link #getView() view} can also be {@link #reset() reseted} to free
+ * resources or for testing hot-code changes during development. Therefore implementations have to properly reset their
+ * state in {@link #onReset()}.
+ *
  * @param <VIEW> is the generic type of the {@link #getView() view}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract class AbstractDialogController<VIEW extends UiWidget> extends AbstractLoggableComponent implements
-    AbstractDialog {
+public abstract class AbstractDialogController<VIEW extends UiWidget> extends AbstractLoggableComponent
+    implements AbstractDialog {
 
   /** @see #getView() */
   private VIEW view;
@@ -52,7 +51,7 @@ public abstract class AbstractDialogController<VIEW extends UiWidget> extends Ab
   /**
    * This method sets the {@link #isVisible() visible} flag and on change it triggers {@link #onShow()} or
    * {@link #onHide()} accordingly.
-   * 
+   *
    * @param visible - <code>true</code> if this controller is about to show its {@link #getView() view},
    *        <code>false</code> if it will hide it.
    */
@@ -81,8 +80,8 @@ public abstract class AbstractDialogController<VIEW extends UiWidget> extends Ab
   }
 
   /**
-   * This method gets called whenever this controller is {@link #reset() reseted}. If you keep custom state
-   * information you need to override and reset your state.
+   * This method gets called whenever this controller is {@link #reset() reseted}. If you keep custom state information
+   * you need to override and reset your state.
    */
   protected void onReset() {
 
@@ -90,8 +89,8 @@ public abstract class AbstractDialogController<VIEW extends UiWidget> extends Ab
   }
 
   /**
-   * This method gets called whenever the {@link #getView() view} is shown on the screen. It can be overridden
-   * to trigger custom logic - e.g. to update data.
+   * This method gets called whenever the {@link #getView() view} is shown on the screen. It can be overridden to
+   * trigger custom logic - e.g. to update data.
    */
   protected void onShow() {
 
@@ -99,8 +98,8 @@ public abstract class AbstractDialogController<VIEW extends UiWidget> extends Ab
   }
 
   /**
-   * This method gets called whenever the {@link #getView() view} is hidden from the screen. It can be
-   * overridden to trigger custom logics or to clean up resources.
+   * This method gets called whenever the {@link #getView() view} is hidden from the screen. It can be overridden to
+   * trigger custom logics or to clean up resources.
    */
   protected void onHide() {
 
@@ -111,18 +110,18 @@ public abstract class AbstractDialogController<VIEW extends UiWidget> extends Ab
    * This method creates the {@link #getView() view} and has to be implemented for each individual dialog. <br>
    * <b>ATTENTION:</b><br>
    * This method can be called more than once.
-   * 
+   *
    * @return the new {@link #getView() view}.
    */
   protected abstract VIEW createView();
 
   /**
-   * This method gets the view of this {@link AbstractDialogController}. The view is the actual UI represented
-   * by a {@link UiWidget}. <br>
-   * In most cases this will be a {@link net.sf.mmm.client.ui.api.widget.UiWidgetRegular}. However, for
-   * specific controllers such as {@link net.sf.mmm.client.ui.api.dialog.DialogConstants#TYPE_ROOT} it may not
-   * be a regular widget.
-   * 
+   * This method gets the view of this {@link AbstractDialogController}. The view is the actual UI represented by a
+   * {@link UiWidget}. <br>
+   * In most cases this will be a {@link net.sf.mmm.client.ui.api.widget.UiWidgetRegular}. However, for specific
+   * controllers such as {@link net.sf.mmm.client.ui.api.dialog.DialogConstants#TYPE_ROOT} it may not be a regular
+   * widget.
+   *
    * @return the view.
    */
   public VIEW getView() {

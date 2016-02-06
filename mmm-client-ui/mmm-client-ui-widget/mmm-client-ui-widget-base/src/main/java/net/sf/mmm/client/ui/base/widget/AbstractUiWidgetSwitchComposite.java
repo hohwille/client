@@ -10,10 +10,10 @@ import net.sf.mmm.util.value.api.ValueOutOfRangeException;
 
 /**
  * This is the abstract base implementation of {@link UiWidgetSwitchComposite}.
- * 
+ *
  * @param <ADAPTER> is the generic type of {@link #getWidgetAdapter()}.
  * @param <CHILD> is the generic type of the {@link #getChild(int) children}.
- * 
+ *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
@@ -25,10 +25,10 @@ public abstract class AbstractUiWidgetSwitchComposite<ADAPTER extends UiWidgetAd
 
   /**
    * The constructor.
-   * 
+   *
    * @param context is the {@link #getContext() context}.
-   * @param widgetAdapter is the {@link #getWidgetAdapter() widget adapter}. Typically <code>null</code> for
-   *        lazy initialization.
+   * @param widgetAdapter is the {@link #getWidgetAdapter() widget adapter}. Typically <code>null</code> for lazy
+   *        initialization.
    */
   public AbstractUiWidgetSwitchComposite(UiContext context, ADAPTER widgetAdapter) {
 
@@ -55,8 +55,10 @@ public abstract class AbstractUiWidgetSwitchComposite<ADAPTER extends UiWidgetAd
   public void showChild(int index) {
 
     if ((index < 0) && (index > getChildCount())) {
-      throw new ValueOutOfRangeException(Integer.valueOf(index), Integer.valueOf(0), Integer.valueOf(getChildCount()),
-          this + ".showChild(index)");
+      Number value = Integer.valueOf(index);
+      Number min = Integer.valueOf(0);
+      Number max = Integer.valueOf(getChildCount());
+      throw new ValueOutOfRangeException(value, min, max, this + ".showChild(index)");
     }
     this.showChildIndex = index;
     if (hasWidgetAdapter()) {

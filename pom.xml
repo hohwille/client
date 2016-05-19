@@ -24,8 +24,8 @@
   </properties>
   
   <modules>
-    <module>mmm-client-bom</module>
-    <module>mmm-client-modules</module>
+    <module>bom</module>
+    <module>modules</module>
   </modules>
 
   <issueManagement>

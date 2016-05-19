@@ -8,11 +8,13 @@
     <version>dev-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>mmm-client-ui-core</artifactId>
+  <artifactId>mmm-client-ui-dialog</artifactId>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
-  <description>Core APIs for user-interfaces (UI).</description>
+  <description>Dialog-Framework based on client-ui-widget.</description>
   <modules>
-    <module>mmm-client-ui-core-api</module>
+    <module>api</module>
+    <module>impl-gwt</module>
   </modules>
+  
 </project>

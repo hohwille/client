@@ -8,11 +8,11 @@
     <version>dev-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>mmm-client-ui-gwt</artifactId>
+  <artifactId>mmm-client-ui-theme</artifactId>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
-  <description>GWT specific code that is provided as reusable module without requirements to also use mmm-client-ui-widget.</description>
+  <description>Themes for different look and feels of the UI.</description>
   <modules>
-    <module>mmm-client-ui-gwt-widgets</module>
+    <module>standard</module>
   </modules>
 </project>

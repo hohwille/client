@@ -6,7 +6,7 @@
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm-client-modules</artifactId>
     <version>dev-SNAPSHOT</version>
-    <relativePath>../mmm-client-modules/pom.xml</relativePath>
+    <relativePath>../modules/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-client-api</artifactId>
   <version>${net.sf.mmm.client.version}</version>

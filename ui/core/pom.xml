@@ -4,19 +4,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>net.sf.m-m-m</groupId>
-    <artifactId>mmm-client-modules</artifactId>
+    <artifactId>mmm-client-ui</artifactId>
     <version>dev-SNAPSHOT</version>
-    <relativePath>../mmm-client-modules/pom.xml</relativePath>
+    <relativePath>../pom.xml</relativePath>
   </parent>
-  <artifactId>mmm-client-ui</artifactId>
+  <artifactId>mmm-client-ui-core</artifactId>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
-  <description>Infrastructure for User-Interfaces (UI) of client-applications.</description>
+  <description>Core APIs for user-interfaces (UI).</description>
   <modules>
-    <module>mmm-client-ui-core</module>
-    <module>mmm-client-ui-widget</module>
-    <module>mmm-client-ui-dialog</module>
-    <module>mmm-client-ui-theme</module>
-    <module>mmm-client-ui-gwt</module>
+    <module>api</module>
   </modules>
 </project>

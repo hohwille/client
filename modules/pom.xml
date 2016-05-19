@@ -13,9 +13,9 @@
   <description>The actual modules of mmm-client.</description>
 
   <modules>
-    <module>../mmm-client-api</module>
-    <module>../mmm-client-impl-gwt</module>
-    <module>../mmm-client-ui</module>
+    <module>../api</module>
+    <module>../impl-gwt</module>
+    <module>../ui</module>
   </modules>
   
   <dependencies>

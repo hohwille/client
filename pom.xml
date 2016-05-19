@@ -21,6 +21,7 @@
     <!-- Internal project versions -->
     <net.sf.mmm.service.version>1.0.0-SNAPSHOT</net.sf.mmm.service.version>
     <net.sf.mmm.client.version>1.0.0-SNAPSHOT</net.sf.mmm.client.version>
+    <net.sf.mmm.util.version>7.2.0-SNAPSHOT</net.sf.mmm.util.version>
   </properties>
   
   <modules>

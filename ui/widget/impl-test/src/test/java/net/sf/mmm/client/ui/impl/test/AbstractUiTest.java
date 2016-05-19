@@ -2,8 +2,13 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.client.ui.impl.test;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+
+import org.junit.Assert;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import net.sf.mmm.client.ui.api.UiContext;
 import net.sf.mmm.client.ui.api.attribute.AttributeWriteValidationFailure;
@@ -21,11 +26,6 @@ import net.sf.mmm.util.exception.api.ObjectMismatchException;
 import net.sf.mmm.util.lang.api.attribute.AttributeReadValue;
 import net.sf.mmm.util.lang.api.attribute.AttributeWriteValue;
 import net.sf.mmm.util.pojo.descriptor.impl.PojoDescriptorBuilderFactoryImpl;
-
-import org.junit.Assert;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
 /**
  * This is the abstract base class for Tests of the {@link UiWidget}-framework based on the test
@@ -60,7 +60,8 @@ public abstract class AbstractUiTest extends Assert {
   @Parameters
   public static Collection<Object[]> parameters() {
 
-    return Arrays.asList(new Object[] { null }, new Object[] { SPRING_CONFIG });
+    // return Arrays.asList(new Object[] { null }, new Object[] { SPRING_CONFIG });
+    return Collections.singletonList(new Object[] { null });
   }
 
   /**
@@ -153,8 +154,8 @@ public abstract class AbstractUiTest extends Assert {
       if ((!hasWidgetAdapter) && (widget instanceof UiWidgetField)) {
         // ignore this as fields may require to create their adapter for building the fieldLabelWidget.
       } else {
-        throw new ObjectMismatchException(Boolean.valueOf(widget.hasWidgetAdapter()),
-            Boolean.valueOf(hasWidgetAdapter), widget);
+        throw new ObjectMismatchException(Boolean.valueOf(widget.hasWidgetAdapter()), Boolean.valueOf(hasWidgetAdapter),
+            widget);
       }
     }
     if (widget instanceof UiWidgetComposite) {

@@ -5,7 +5,7 @@
   <parent>
     <groupId>net.sf.m-m-m</groupId>
     <artifactId>mmm</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.2</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>mmm-client</artifactId>
@@ -21,7 +21,7 @@
     <!-- Internal project versions -->
     <net.sf.mmm.service.version>1.0.0-SNAPSHOT</net.sf.mmm.service.version>
     <net.sf.mmm.client.version>1.0.0-SNAPSHOT</net.sf.mmm.client.version>
-    <net.sf.mmm.util.version>7.2.0-SNAPSHOT</net.sf.mmm.util.version>
+    <net.sf.mmm.util.version>8.0.0-SNAPSHOT</net.sf.mmm.util.version>
   </properties>
   
   <modules>
